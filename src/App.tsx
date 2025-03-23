@@ -1,46 +1,69 @@
 import { ReactNode } from "react";
+import {
+  faBars,
+  faUser,
+  faGear,
+  faHouse,
+  faComments,
+  faGhost,
+} from "@fortawesome/free-solid-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./App.css";
 
 function App() {
   return (
     <>
       <div id="base-layout">
-        <SideBar>
+        <Sidebar>
           <Nav />
-        </SideBar>
+        </Sidebar>
       </div>
     </>
   );
 }
 
-const SideBar = ({ children }: { children: ReactNode }) => {
+const Sidebar = ({ children }: { children: ReactNode }) => {
   return (
-    <div id="sideBar">
-      <div id="sideBarHeader">
-        <a href="" id="sideBarLogo"></a>
-        <p id="sideBarTitle">Dashboard</p>
+    <div id="sidebar">
+      <div id="sidebar-header">
+        <FontAwesomeIcon icon={faBars} id="sidebar-icon" />
+        <p id="sidebar-title">Dashboard</p>
       </div>
       {children}
+      <p id="gh-link">
+        <FontAwesomeIcon icon={faGithub} id="gh-icon" />
+        <a href="https://github.com/CMartin0-0">Caleb Martin</a>
+      </p>
     </div>
   );
 };
 
 const Nav = () => {
   return (
-    <nav id="sideBarNav">
-      <a href="" id="homePage">
+    <nav id="sidebar-nav">
+      <FontAwesomeIcon icon={faHouse} id="home-icon" className="nav-icon" />
+      <a href="" id="home-page">
         Home
       </a>
-      <a href="" id="profilePage">
+      <FontAwesomeIcon icon={faUser} id="profile-icon" className="nav-icon" />
+      <a href="" id="profile-page">
         Profile
       </a>
-      <a href="" id="settingsPage">
+      <FontAwesomeIcon icon={faGear} id="settings-icon" className="nav-icon" />
+      <a href="" id="settings-page">
         Settings
       </a>
-      <a href="" id="supportPage">
+      <FontAwesomeIcon
+        icon={faComments}
+        id="support-icon"
+        className="nav-icon"
+      />
+      <a href="" id="support-page">
         Support
       </a>
-      <a href="" id="privacyPage">
+      <FontAwesomeIcon icon={faGhost} id="privacy-icon" className="nav-icon" />
+      <a href="" id="privacy-page">
         Privacy
       </a>
     </nav>
