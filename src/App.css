@@ -37,6 +37,16 @@ a:hover {
   width: 24px;
 }
 
+#header {
+  display: grid;
+  grid-column: 2;
+  grid-row: 1;
+  grid-template-columns: repeat(10, 10%);
+  grid-template-rows: 40% 60%;
+  box-shadow: rgba(0, 0, 0, 0.545) 0 2px 5px;
+  background: rgb(235, 234, 234);
+}
+
 /* --General Styles End-- */
 
 /* Sidebar Styles */
@@ -97,4 +107,77 @@ a:hover {
 #gh-icon {
   position: relative;
   left: 20px;
+}
+
+/* Sidebar Styles End */
+
+/* Header Styles */
+
+#searchbar {
+  display: grid;
+  grid-row: 1;
+  grid-column: 2 / 6;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto;
+  align-content: center;
+}
+
+#searchfield {
+  grid-column: 1;
+  grid-row: 1;
+  height: 20px;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 1rem;
+  text-align: center;
+  border-right: none;
+}
+
+#searchbtn {
+  grid-column: 2;
+  grid-row: 1;
+  background: none;
+  border: none;
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+}
+
+.profile-text-small {
+  grid-column: 2;
+  grid-row: 2;
+  font-size: 0.8rem;
+}
+
+.profile-text-large {
+  grid-column: 2 / 5;
+  grid-row: 2;
+  align-self: center;
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+.profile-text-medium {
+  grid-column: 10;
+  grid-row: 1;
+}
+
+#headerbtns {
+  display: grid;
+  grid-column: 7 / 10;
+  grid-row: 2;
+  grid-template-columns: auto auto auto;
+  height: 25px;
+  column-gap: 2px;
+  align-self: center;
+}
+
+#notificationbtn {
+  grid-column: 8;
+  grid-row: 1;
+  width: 20px;
+  height: 20px;
+  justify-self: center;
+  background: none;
+  border: none;
 }

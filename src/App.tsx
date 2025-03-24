@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { Children, ReactNode } from "react";
 import {
   faBars,
   faUser,
@@ -6,6 +6,8 @@ import {
   faHouse,
   faComments,
   faGhost,
+  faMagnifyingGlass,
+  faBell,
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -18,6 +20,11 @@ function App() {
         <Sidebar>
           <Nav />
         </Sidebar>
+        <Header>
+          <Searchbar />
+          <HeaderBtns />
+          <HeaderNotifications />
+        </Header>
       </div>
     </>
   );
@@ -67,6 +74,49 @@ const Nav = () => {
         Privacy
       </a>
     </nav>
+  );
+};
+
+const Header = ({ children }: { children: ReactNode }) => {
+  return (
+    <div id="header">
+      <image id="profile-pic-1"></image>
+      <p className="profile-text-small">Hey,</p>
+      <p className="profile-text-large">User Name (@username)</p>
+      <image id="profile-pic-2"></image>
+      <p className="profile-text-medium">User Name</p>
+      {children}
+    </div>
+  );
+};
+
+const Searchbar = () => {
+  return (
+    <div id="searchbar">
+      <label htmlFor="searchfield"></label>
+      <input id="searchfield" type="text" placeholder="Search Here"></input>
+      <button id="searchbtn">
+        <FontAwesomeIcon icon={faMagnifyingGlass} />
+      </button>
+    </div>
+  );
+};
+
+const HeaderBtns = () => {
+  return (
+    <div id="headerbtns">
+      <button id="newbtn">New</button>
+      <button id="uploadbtn">Upload</button>
+      <button id="sharebtn">Share</button>
+    </div>
+  );
+};
+
+const HeaderNotifications = () => {
+  return (
+    <button id="notificationbtn">
+      <FontAwesomeIcon icon={faBell} />
+    </button>
   );
 };
 export default App;
