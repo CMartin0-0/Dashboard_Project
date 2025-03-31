@@ -25,6 +25,9 @@ function App() {
           <HeaderBtns />
           <HeaderNotifications />
         </Header>
+        <MainContent>
+          <ProjectSection />
+        </MainContent>
       </div>
     </>
   );
@@ -92,10 +95,10 @@ const Header = ({ children }: { children: ReactNode }) => {
 
 const Searchbar = () => {
   return (
-    <div id="searchbar">
-      <label htmlFor="searchfield"></label>
-      <input id="searchfield" type="text" placeholder="Search Here"></input>
-      <button id="searchbtn">
+    <div id="search-bar">
+      <label htmlFor="search-field"></label>
+      <input id="search-field" type="text" placeholder="Search Here"></input>
+      <button id="search-btn">
         <FontAwesomeIcon icon={faMagnifyingGlass} />
       </button>
     </div>
@@ -104,19 +107,93 @@ const Searchbar = () => {
 
 const HeaderBtns = () => {
   return (
-    <div id="headerbtns">
-      <button id="newbtn">New</button>
-      <button id="uploadbtn">Upload</button>
-      <button id="sharebtn">Share</button>
+    <div id="header-btns">
+      <button id="new-btn">New</button>
+      <button id="upload-btn">Upload</button>
+      <button id="share-btn">Share</button>
     </div>
   );
 };
 
 const HeaderNotifications = () => {
   return (
-    <button id="notificationbtn">
+    <button id="notification-btn">
       <FontAwesomeIcon icon={faBell} />
     </button>
   );
 };
+
+const MainContent = ({ children }: { children: ReactNode }) => {
+  return <div id="main-content">{children}</div>;
+};
+
+const ProjectSection = () => {
+  const projectsList = [
+    {
+      title: "Project 1",
+      content:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis a reiciendis ducimus!",
+      key: "1",
+    },
+    {
+      title: "Project 2",
+      content:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis a reiciendis ducimus!",
+      key: "2",
+    },
+    {
+      title: "Project 3",
+      content:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis a reiciendis ducimus!",
+      key: "3",
+    },
+    {
+      title: "Project 4",
+      content:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis a reiciendis ducimus!",
+      key: "4",
+    },
+    {
+      title: "Project 5",
+      content:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis a reiciendis ducimus!",
+      key: "5",
+    },
+    {
+      title: "Project 6",
+      content:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis a reiciendis ducimus!",
+      key: "6",
+    },
+  ];
+
+  return (
+    <div id="projects">
+      <div id="projects-header">Your Projects</div>
+      <div id="projects-grid">
+        {projectsList.map((project) => (
+          <div
+            className={`${project.title.replace(" ", "-").toLowerCase()} card`}
+            key={project.key}
+          >
+            <div
+              className={`${project.title.replace(" ", "-").toLowerCase()}-title card-title`}
+            >
+              {project.title}
+            </div>
+            <div
+              className={`${project.title.replace(" ", "-").toLowerCase()}-content card-content`}
+            >
+              {project.content}
+            </div>
+            <div
+              className={`${project.title.replace(" ", "-").toLowerCase()}-btns card-btns`}
+            ></div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 export default App;
