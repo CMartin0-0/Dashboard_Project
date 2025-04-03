@@ -5,6 +5,9 @@
   padding: 0;
 }
 
+body {
+  background: rgb(225, 225, 225);
+}
 #root {
   height: 100vh;
   width: 100vw;
@@ -16,7 +19,6 @@
   grid-template-rows: 10vh 1fr;
   height: 100%;
   width: 100%;
-  background: rgb(225, 225, 225);
 }
 a {
   text-decoration: none;
@@ -30,22 +32,18 @@ a {
 a:hover {
   color: rgb(175, 175, 255);
 }
-.nav-icon {
-  grid-column: 1;
-  margin-left: 35px;
-  align-self: center;
-  height: 30px;
-  width: 24px;
-}
+
 #sidebar {
   display: grid;
   grid-template-rows: repeat(10, 10vh);
   grid-column: 1;
   grid-row: 1 / 3;
   height: 100%;
+  width: 20%;
   border-right: solid 1px black;
-  background-color: rgba(0, 0, 0, 0.801);
+  background-color: rgba(0, 0, 0, 0.901);
   color: rgb(255, 255, 255);
+  position: fixed;
 }
 
 #header {
@@ -63,37 +61,6 @@ a:hover {
   grid-row: 2;
   grid-column: 2;
   grid-template-columns: 75% 25%;
-}
-
-.card {
-  width: 90%;
-  height: 90%;
-  background-color: rgb(250, 250, 250);
-  justify-self: center;
-  align-self: center;
-  border-radius: 20px;
-  display: grid;
-  grid-template-columns: 60% 40%;
-  grid-template-rows: 25% 65% 10%;
-}
-
-.card-title {
-  grid-column: 1 / 3;
-  grid-row: 1;
-  align-self: end;
-  margin-left: 25px;
-  font-weight: 600;
-}
-
-.card-content {
-  grid-column: 1 / 3;
-  grid-row: 2;
-  justify-self: center;
-  font-size: 1rem;
-  margin-right: 25px;
-  margin-left: 25px;
-  margin-top: 5px;
-  line-break: anywhere;
 }
 
 /* general styles end */
@@ -134,7 +101,13 @@ a:hover {
   grid-template-rows: repeat(5, 20%);
   font-size: 1.5rem;
 }
-
+.nav-icon {
+  grid-column: 1;
+  margin-left: 35px;
+  align-self: center;
+  height: 30px;
+  width: 24px;
+}
 #gh-link {
   grid-row: 10;
   margin-top: auto;
@@ -223,18 +196,19 @@ a:hover {
 
 /* main content styles */
 
+/* projects section styles */
 #projects {
   display: grid;
   grid-column: 1;
   grid-row: 1;
   grid-template-columns: 100%;
-  grid-template-rows: 5% 95%;
+  grid-template-rows: 5% auto 5%;
 }
 
 #projects-header {
   font-size: 1.4rem;
   margin-top: 15px;
-  margin-left: 25px;
+  margin-left: 20px;
   font-weight: 500;
   grid-row: 1;
   grid-column: 1;
@@ -248,4 +222,131 @@ a:hover {
   height: 100%;
   grid-auto-columns: 1fr;
   grid-auto-rows: 1fr;
+  row-gap: 10px;
+}
+
+.card {
+  width: 275px;
+  height: 175px;
+  background-color: rgb(250, 250, 250);
+  justify-self: center;
+  align-self: center;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 25% 65% 10%;
+  margin-top: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.736);
+  border-left: solid orange 5px;
+}
+
+.card-title {
+  grid-column: 1 / 3;
+  grid-row: 1;
+  align-self: end;
+  margin-left: 20px;
+  font-weight: 600;
+}
+
+.card-content {
+  grid-column: 1 / 3;
+  grid-row: 2;
+  justify-self: center;
+  font-size: 0.9rem;
+  margin-right: 25px;
+  margin-left: 20px;
+  margin-top: 5px;
+  line-break: loose;
+}
+.card-btns {
+  grid-row: 3;
+  grid-column: 2;
+  display: grid;
+  grid-template-columns: 45px 45px 45px;
+  grid-template-rows: auto;
+}
+#bookmark {
+  grid-column: 1;
+  justify-self: center;
+  position: relative;
+  bottom: 10px;
+}
+
+#share {
+  grid-column: 2;
+  justify-self: center;
+  position: relative;
+  bottom: 10px;
+}
+
+#fullscreen {
+  grid-column: 3;
+  justify-self: center;
+  position: relative;
+  bottom: 10px;
+}
+
+/* projects section styles end */
+
+/* announcement section styles */
+
+#announcements {
+  grid-column: 2;
+  grid-row: 1;
+  display: grid;
+  grid-template-rows: 5% 45% 45% 5%;
+  grid-template-columns: auto;
+}
+
+#announcements-header {
+  font-size: 1.4rem;
+  margin-top: 15px;
+  margin-left: 25px;
+  font-weight: 500;
+  grid-row: 1;
+  grid-column: 1;
+  position: fixed;
+}
+
+#announcements-section {
+  grid-column: 1;
+  grid-row: 2;
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+#announcement-card {
+  background-color: rgb(250, 250, 250);
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto auto auto;
+  height: 30%;
+  position: fixed;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.736);
+}
+
+.announcement {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: fit-content fit-content;
+}
+
+.announcement:nth-child(2) {
+  border-bottom: solid 0.01px rgba(0, 0, 0, 0.692);
+  border-top: solid 0.01px rgba(0, 0, 0, 0.695);
+}
+
+.a-card-content {
+  font-size: 0.85rem;
+  margin-right: 15px;
+  margin-left: 10px;
+  margin-top: 5px;
+  line-break: loose;
+}
+.a-card-title {
+  margin-left: 10px;
+  font-weight: 600;
+  align-self: end;
 }

@@ -8,6 +8,9 @@ import {
   faGhost,
   faMagnifyingGlass,
   faBell,
+  faShareFromSquare,
+  faBookmark,
+  faArrowsUpDownLeftRight,
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -27,6 +30,7 @@ function App() {
         </Header>
         <MainContent>
           <ProjectSection />
+          <Announcements />
         </MainContent>
       </div>
     </>
@@ -165,6 +169,30 @@ const ProjectSection = () => {
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis a reiciendis ducimus!",
       key: "6",
     },
+    {
+      title: "Project 7",
+      content:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis a reiciendis ducimus!",
+      key: "7",
+    },
+    {
+      title: "Project 8",
+      content:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis a reiciendis ducimus!",
+      key: "8",
+    },
+    {
+      title: "Project 9",
+      content:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis a reiciendis ducimus!",
+      key: "9",
+    },
+    {
+      title: "Project 10",
+      content:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis a reiciendis ducimus!",
+      key: "10",
+    },
   ];
 
   return (
@@ -188,9 +216,66 @@ const ProjectSection = () => {
             </div>
             <div
               className={`${project.title.replace(" ", "-").toLowerCase()}-btns card-btns`}
-            ></div>
+            >
+              <a href="" id="bookmark">
+                <FontAwesomeIcon icon={faBookmark} />
+              </a>
+              <a href="" id="share">
+                <FontAwesomeIcon icon={faShareFromSquare} />
+              </a>
+              <a href="" id="fullscreen">
+                <FontAwesomeIcon icon={faArrowsUpDownLeftRight} />
+              </a>
+            </div>
           </div>
         ))}
+      </div>
+    </div>
+  );
+};
+
+const Announcements = () => {
+  const announcementsList = [
+    {
+      title: "Announcement 1",
+      content:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis a reiciendis ducimus!",
+      key: "1",
+    },
+    {
+      title: "Announcement 2",
+      content:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis a reiciendis ducimus!",
+      key: "2",
+    },
+    {
+      title: "Announcement 3",
+      content:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis a reiciendis ducimus!",
+      key: "3",
+    },
+  ];
+
+  return (
+    <div id="announcements">
+      <div id="announcements-header">Announcements</div>
+      <div id="announcements-section">
+        <div id="announcement-card">
+          {announcementsList.map((announcement) => (
+            <div className={`${announcement.title.toLowerCase()}`}>
+              <div
+                className={`${announcement.title.replace(" ", "-").toLowerCase()}-title a-card-title`}
+              >
+                {announcement.title}
+              </div>
+              <div
+                className={`${announcement.title.replace(" ", "-").toLowerCase()}-content a-card-content`}
+              >
+                {announcement.content}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
