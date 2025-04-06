@@ -7,6 +7,8 @@
 
 body {
   background: rgb(225, 225, 225);
+  min-width: 980px;
+  width: 100%;
 }
 #root {
   height: 100vh;
@@ -15,7 +17,7 @@ body {
 
 #base-layout {
   display: grid;
-  grid-template-columns: 20vw 1fr;
+  grid-template-columns: 250px 1fr;
   grid-template-rows: 10vh 1fr;
   height: 100%;
   width: 100%;
@@ -38,12 +40,12 @@ a:hover {
   grid-template-rows: repeat(10, 10vh);
   grid-column: 1;
   grid-row: 1 / 3;
-  height: 100%;
-  width: 20%;
+  width: 100%;
   border-right: solid 1px black;
   background-color: rgba(0, 0, 0, 0.901);
   color: rgb(255, 255, 255);
   position: fixed;
+  width: 250px;
 }
 
 #header {
@@ -130,6 +132,7 @@ a:hover {
   grid-template-columns: 1fr auto;
   grid-template-rows: auto;
   align-content: center;
+  max-width: 300px;
 }
 
 #search-field {
@@ -174,20 +177,22 @@ a:hover {
 
 #header-btns {
   display: grid;
-  grid-column: 7 / 10;
+  grid-column: 8 / 11;
   grid-row: 2;
   grid-template-columns: auto auto auto;
   height: 25px;
   column-gap: 2px;
   align-self: center;
+  justify-self: center;
+  width: 200px;
 }
 
 #notification-btn {
-  grid-column: 8;
+  grid-column: 9;
   grid-row: 1;
   width: 20px;
   height: 20px;
-  justify-self: center;
+  justify-self: start;
   background: none;
   border: none;
 }
@@ -203,15 +208,16 @@ a:hover {
   grid-row: 1;
   grid-template-columns: 100%;
   grid-template-rows: 5% auto 5%;
+  min-width: 525px;
 }
 
 #projects-header {
   font-size: 1.4rem;
   margin-top: 15px;
-  margin-left: 20px;
   font-weight: 500;
   grid-row: 1;
   grid-column: 1;
+  justify-self: center;
 }
 
 #projects-grid {
@@ -223,6 +229,9 @@ a:hover {
   grid-auto-columns: 1fr;
   grid-auto-rows: 1fr;
   row-gap: 10px;
+  column-gap: 20px;
+  max-width: 630px;
+  justify-self: center;
 }
 
 .card {
@@ -294,11 +303,13 @@ a:hover {
   grid-column: 2;
   grid-row: 1;
   display: grid;
-  grid-template-rows: 5% auto 5% 50%;
-  grid-template-columns: 100%;
+  grid-template-rows: 5% 45% 5% 45%;
+  grid-template-columns: auto;
   position: sticky;
   top: 0;
-  height: 85%;
+  height: 90%;
+  max-width: 305px;
+  min-width: 250px;
 }
 
 #announcements-header {

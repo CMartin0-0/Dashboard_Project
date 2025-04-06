@@ -104,7 +104,7 @@ const Searchbar = () => {
   return (
     <div id="search-bar">
       <label htmlFor="search-field"></label>
-      <input id="search-field" type="text" placeholder="Search Here"></input>
+      <input id="search-field" type="text" placeholder="Search Here..."></input>
       <button id="search-btn">
         <FontAwesomeIcon icon={faMagnifyingGlass} />
       </button>
