@@ -16,6 +16,7 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./App.css";
 
+// links do not go anywhere and are just placeholders (except github link).
 function App() {
   return (
     <>
@@ -30,7 +31,9 @@ function App() {
         </Header>
         <MainContent>
           <ProjectSection />
-          <Announcements />
+          <Announcements>
+            <Trending />
+          </Announcements>
         </MainContent>
       </div>
     </>
@@ -234,7 +237,7 @@ const ProjectSection = () => {
   );
 };
 
-const Announcements = () => {
+const Announcements = ({ children }: { children: ReactNode }) => {
   const announcementsList = [
     {
       title: "Announcement 1",
@@ -257,28 +260,77 @@ const Announcements = () => {
   ];
 
   return (
-    <div id="announcements">
+    <div id="main-sidebar">
       <div id="announcements-header">Announcements</div>
-      <div id="announcements-section">
-        <div id="announcement-card">
-          {announcementsList.map((announcement) => (
-            <div className={`${announcement.title.toLowerCase()}`}>
-              <div
-                className={`${announcement.title.replace(" ", "-").toLowerCase()}-title a-card-title`}
-              >
-                {announcement.title}
-              </div>
-              <div
-                className={`${announcement.title.replace(" ", "-").toLowerCase()}-content a-card-content`}
-              >
-                {announcement.content}
-              </div>
+      <div id="announcement-card">
+        {announcementsList.map((announcement) => (
+          <div
+            className={`${announcement.title.toLowerCase()}`}
+            key={announcement.key}
+          >
+            <div
+              className={`${announcement.title.replace(" ", "-").toLowerCase()}-title a-card-title`}
+            >
+              {announcement.title}
             </div>
-          ))}
-        </div>
+            <div
+              className={`${announcement.title.replace(" ", "-").toLowerCase()}-content a-card-content`}
+            >
+              {announcement.content}
+            </div>
+          </div>
+        ))}
       </div>
+      {children}
     </div>
   );
 };
 
+const Trending = () => {
+  const trendingList = [
+    {
+      title: "Trending 1",
+      username: "@tom",
+      profilePic: "",
+      key: "1",
+    },
+    {
+      title: "Trending 2",
+      username: "@tim",
+      profilePic: "",
+      key: "2",
+    },
+    {
+      title: "Trending 3",
+      username: "@matt",
+      profilePic: " ",
+      key: "3",
+    },
+  ];
+  return (
+    <>
+      <div id="trending-header">Trending</div>
+      <div id="trending-card">
+        {trendingList.map((item) => (
+          <>
+            <div
+              className={`${item.title.replace(" ", "-").toLowerCase()}-title b-card-title`}
+            >
+              {item.title}
+            </div>
+            <div
+              className={`${item.title.replace(" ", "-").toLowerCase()}-username b-card-username`}
+            >
+              {item.username}
+            </div>
+            <FontAwesomeIcon
+              icon={faUser}
+              className={`${item.key}-icon user-icon`}
+            />
+          </>
+        ))}
+      </div>
+    </>
+  );
+};
 export default App;

@@ -290,12 +290,15 @@ a:hover {
 
 /* announcement section styles */
 
-#announcements {
+#main-sidebar {
   grid-column: 2;
   grid-row: 1;
   display: grid;
-  grid-template-rows: 5% 45% 45% 5%;
-  grid-template-columns: auto;
+  grid-template-rows: 5% auto 5% 50%;
+  grid-template-columns: 100%;
+  position: sticky;
+  top: 0;
+  height: 85%;
 }
 
 #announcements-header {
@@ -305,15 +308,6 @@ a:hover {
   font-weight: 500;
   grid-row: 1;
   grid-column: 1;
-  position: fixed;
-}
-
-#announcements-section {
-  grid-column: 1;
-  grid-row: 2;
-  display: flex;
-  justify-content: center;
-  margin-top: 5px;
 }
 
 #announcement-card {
@@ -322,15 +316,19 @@ a:hover {
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: auto auto auto;
-  height: 30%;
-  position: fixed;
+  height: 90%;
+  margin-top: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.736);
+  grid-column: 1;
+  grid-row: 2;
 }
 
 .announcement {
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: fit-content fit-content;
+  margin-left: 15px;
+  margin-right: 15px;
 }
 
 .announcement:nth-child(2) {
@@ -349,4 +347,65 @@ a:hover {
   margin-left: 10px;
   font-weight: 600;
   align-self: end;
+}
+
+#trending-header {
+  grid-row: 3;
+  font-size: 1.4rem;
+  margin-top: 15px;
+  margin-left: 25px;
+  font-weight: 500;
+}
+
+#trending-card {
+  grid-row: 4;
+  display: grid;
+  grid-template-columns: 25% 75%;
+  grid-template-rows: repeat(3, 33%);
+  height: 50%;
+  margin-top: 10px;
+  background-color: rgb(250, 250, 250);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.736);
+}
+
+.b-card-title,
+.b-card-username {
+  grid-column: 2;
+  align-self: center;
+}
+
+.b-card-username {
+  font-weight: 600;
+}
+
+.trending-1-title,
+.trending-1-username {
+  grid-row: 1;
+}
+.trending-2-title,
+.trending-2-username {
+  grid-row: 2;
+}
+
+.trending-3-title,
+.trending-3-username {
+  grid-row: 3;
+}
+.trending-1-title {
+  margin-top: 30px;
+}
+
+.trending-2-title {
+  margin-top: 30px;
+}
+
+.trending-3-title {
+  margin-top: 30px;
+}
+
+.user-icon {
+  justify-self: center;
+  align-self: center;
+  margin-top: 15px;
 }
