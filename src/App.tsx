@@ -17,6 +17,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./App.css";
 
 // links do not go anywhere and are just placeholders (except github link).
+// list contents is placeholder for fetched data.
 function App() {
   return (
     <>
