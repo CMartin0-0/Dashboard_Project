@@ -10,13 +10,12 @@ This is the **Admin Dashboard** project, part of [The Odin Project](https://www.
 - [Usage](#usage)
 - [Contributing](#contributing)
 
----
+
 
 ## Project Overview
 
 The Admin Dashboard project challenges developers to create a functional and well-designed dashboard layout. It focuses on responsive design, layout organization, and styling. This project is a great opportunity to practice working with CSS and front-end technologies.
 
----
 
 ## Features
 
@@ -25,7 +24,6 @@ The Admin Dashboard project challenges developers to create a functional and wel
 - Organized layout with multiple sections
 - Interactive components and animations (if applicable)
 
----
 
 ## Technologies Used
 
@@ -36,7 +34,7 @@ This project was built using the following technologies:
 - **JavaScript**: Additional functionality (3.5% of the codebase)
 - **HTML**: Structure and content (1.8% of the codebase)
 
----
+
 
 ## Getting Started
 
@@ -59,7 +57,7 @@ Follow these steps to set up the project locally:
    npm start
    ```
 
----
+
 
 ## Usage
 
@@ -67,7 +65,7 @@ Follow these steps to set up the project locally:
 - Explore the dashboard and its features.
 - Resize the browser window to test the responsiveness of the layout.
 
----
+
 
 ## Contributing
 
