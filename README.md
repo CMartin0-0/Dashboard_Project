@@ -9,7 +9,6 @@ This is the **Admin Dashboard** project, part of [The Odin Project](https://www.
 - [Getting Started](#getting-started)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#license)
 
 ---
 
@@ -88,12 +87,6 @@ Contributions are welcome! If you'd like to improve this project, please follow 
    git push origin feature-name
    ```
 5. Open a pull request.
-
----
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ---
 
